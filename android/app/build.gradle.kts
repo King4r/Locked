@@ -5,6 +5,20 @@ val local = Properties().apply { val f=rootProject.file("local.properties"); if(
 android { namespace="com.locked.app"; compileSdk=35
  defaultConfig { applicationId="com.locked.app"; minSdk=26; targetSdk=35; versionCode=1; versionName="1.0"; buildConfigField("String","SUPABASE_URL","\"${local.getProperty("SUPABASE_URL","")}\""); buildConfigField("String","SUPABASE_ANON_KEY","\"${local.getProperty("SUPABASE_ANON_KEY","")}\"") }
  buildFeatures { compose=true; buildConfig=true }
+ compileOptions {
+                        sourceCompatibility = JavaVersion.VERSION_17
+                                targetCompatibility = JavaVersion.VERSION_17
+            }
+ }
+
+ kotlinOptions {
+        jvmTarget = "17"
+ }
+
+ dependencies {
+        // Existing dependencies
+ }
+    
 }
 dependencies {
  implementation(platform("androidx.compose:compose-bom:2024.12.01"))
