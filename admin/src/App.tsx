@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { supabase, configured } from './lib/supabase';
-import { Shield, Tablet, Wifi, WifiOff, Plus, LogOut, RefreshCw, Copy, Check, Battery, Search, LockKeyhole } from 'lucide-react';
+import { Shield, Tablet, Wifi, WifiOff, Plus, LogOut, RefreshCw, Copy, Battery, Search, LockKeyhole } from 'lucide-react';
 
 type Device = {id:string; installation_id:string; name:string; manufacturer:string|null; model:string|null; android_version:string|null; sdk_int:number|null; battery_percent:number|null; status:string; last_seen_at:string; enrolled_at:string};
 const stamp = (s:string) => new Date(s).toLocaleString();
